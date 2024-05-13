@@ -150,8 +150,7 @@ CREATE TABLE PRODUCT (
 	PRODUCT_NAME VARCHAR2(300),
 	PRODUCT_PRICE NUMBER,
 	PRODUCT_COUNNT NUMBER
-)
-
+);
  /* ORDER
  * ORDER_NUM : NUMBER
  * ----------------------
@@ -181,7 +180,7 @@ CREATE TABLE FLOWER(
 	FLOWER_NAME VARCHAR2(100) PRIMARY KEY,
 	FLOWER_COLOR VARCHAR2(100),
 	FLOWER_PRICE NUMBER
-)
+);
 
 /*POT
  * POT_NUMBER : NUMVER
@@ -196,12 +195,37 @@ CREATE TABLE POT (
 	POT_COLOR VARCHAR2 (100),
 	POT_SHAPE VARCHAR2 (100),
 	FLOWER_NAME VARCHAR2(100),
-	CONSTRAINT FLOWER_FK FOREIGN KEY(FLOWER_NAME) REFERENCES "FLOWER"(FLOWER_NAME)
-	
-	
-)
+	CONSTRAINT POTFK FOREIGN KEY(FLOWER_NAME) REFERENCES"FLOWER"(FLOWER_NAME)	
+);
 
+------------------------------------------------------------------------------
+-- EMPLOYEES 테이블의 모든 데이터 조회하기
+SELECT * FROM EMPLOYEES;
 
+-- DEPARTMENTS 테이블의 모든 데이터 조회하기
+SELECT * FROM DEPARTMENTS;
+--사원 테이블에서 이름, 직종, 급여를 조회하세요
+SELECT FIRST_NAME, JOB_ID, SALARY FROM EMPLOYEES;
+
+-- 사원테이블에서 사번, 이름, 직종, 급여, 보너스비율, 실제 보너스 금액 출력
+
+SELECT EMPLOYEE_ID,
+		FIRST_NAME,
+		JOB_ID,
+		SALARY,
+		COMMISSION_PCT,
+		SALARY * COMMISSION_PCT "보너스"
+		FROM EMPLOYEES;
+-- 사원 테이블에서 급여가 10000이상인 사원들의 정보를 사번, 이름, 급여순으로 출력
+SELECT EMPLOYEE_ID, FIRST_NAME, SALARY
+FROM EMPLOYEES
+WHERE SALARY > 10000;
+
+-- 사원 테이블에서 이름이 Michael인 사원의 사번, 이름을 조회
+-- 데이터베이스에서 문자열 데이터는 ''에 넣는다.
+-- 키워드는 대소문자를 가리지 않지만 데이터는 대소문자를 정확하게 써야한다(ex: Michael)
+SELECT EMPLOYEE_ID, FIRST_NAME  FROM EMPLOYEES
+WHERE FIRST_NAME = 'Michael';
 
 
 
