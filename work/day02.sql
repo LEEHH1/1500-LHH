@@ -224,10 +224,22 @@ WHERE SALARY > 10000;
 -- 사원 테이블에서 이름이 Michael인 사원의 사번, 이름을 조회
 -- 데이터베이스에서 문자열 데이터는 ''에 넣는다.
 -- 키워드는 대소문자를 가리지 않지만 데이터는 대소문자를 정확하게 써야한다(ex: Michael)
-SELECT EMPLOYEE_ID, FIRST_NAME  FROM EMPLOYEES
+SELECT EMPLOYEE_ID, FIRST_NAME  
+FROM EMPLOYEES
 WHERE FIRST_NAME = 'Michael';
 
+--사원 테이블에서 직종이 'IT_PROG'인 사원들의 정보를 사번, 이름, 직종, 급여 순으로 출력
+SELECT EMPLOYEE_ID, FIRST_NAME, JOB_ID, SALARY 
+FROM EMPLOYEES
+WHERE JOB_ID = 'IT_PROG';
 
+--사원 테이블에서 급여가 10000 이상 그리고 13000이하인 사원의 정보를 이름, 급여, 순으로 조회
+SELECT FIRST_NAME , SALARY  FROM EMPLOYEES
+WHERE SALARY >= 10000 AND SALARY <= 13000;
+
+-- 사원 테이블에서 입사일이 05년9월21일인 사원의 정보를 사번, 이름, 입사일 순으로 출력
+SELECT EMPLOYEE_ID, FIRST_NAME, HIRE_DATE FROM EMPLOYEES
+WHERE HIRE_DATE = '2005-09-21';
 
 
 
