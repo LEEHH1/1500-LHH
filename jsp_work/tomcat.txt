@@ -1,0 +1,19 @@
+tomcat 10 버전 zip 다운
+
+bin - tlfgod whdfy
+conf - tjfwjd
+lib - 실행에 필요한 라이브러리
+logs- 로그 저장
+temp - 임시 저장소
+webapps - 웹어플리케이션
+work - class파일
+
+conf//server.xml 접근과 접속 설정이 들어있음
+
+
+eclipse
+dynamic web project
+webapp - html css js jsx와 같은 파일이 들어감
+webapp // META-INF - 설정
+webapp // WEB-INF//lib -- 라이브러리가 들어감
+라이브러리 같은 경우 확장자가 . jar(자바아카이브)
